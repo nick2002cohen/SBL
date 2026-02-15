@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Scores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="index.html">Standings</a>
+  <a href="stats.html">Stats</a>
+  <a href="live.html">Live Scores</a>
+  <a href="entry.html">Score Entry</a>
+  <a href="schedule.html">Schedule</a>
+</nav>
+
+<div class="container">
+<h2>Enter Score</h2>
+
+<select id="player">
+  <option value="0">Player 1</option>
+  <option value="1">Player 2</option>
+  <option value="2">Player 3</option>
+  <option value="3">Player 4</option>
+  <option value="4">Player 5</option>
+  <option value="5">Player 6</option>
+  <option value="6">Player 7</option>
+  <option value="7">Player 8</option>
+  <option value="8">Player 9</option>
+  <option value="9">Player 10</option>
+</select>
+
+<input type="number" id="score" placeholder="Score (0-300)">
+<button onclick="submitScore()">Submit</button>
+</div>
+
+<script src="app.js"></script>
+<script>
+function submitScore() {
+  const p = document.getElementById("player").value;
+  const s = parseInt(document.getElementById("score").value);
+  if (s >= 0 && s <= 300) {
+    addScore(p, s);
+    alert("Score added!");
+  }
+}
+</script>
+</body>
+</html>
